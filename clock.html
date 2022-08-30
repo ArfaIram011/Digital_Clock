@@ -1,0 +1,82 @@
+
+<!-- A SIMPLE PROJECT TO DESIGN AN ANALOG CLOCK USING HTML+CSS web technologies  -->
+
+<html>
+
+<head>
+    <title>Digital Clock</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<style>
+    #date-div {
+        border: 5px solid black;
+        margin: 100px;
+        padding-bottom: 50px;
+    }
+
+    .th-class {
+        color: rgb(31, 31, 189);
+        font-size: medium;
+
+
+        border-radius: 15px;
+        border: 5px solid rgb(201, 126, 126);
+    }
+
+    .data-size {
+        font-size: xx-large;
+    }
+
+    table {
+        width: 50%;
+        height: 50%;
+
+    }
+</style>
+
+<body>
+
+    <div id="date-div">
+        <h1><i><u>Current Date:</u></i></h1>
+        <table border="5" cellspacing="20px" cellpadding="2px" align="center">
+            <tr>
+                <th class="th-class"><span class="data-size">DATE</span></th>
+
+                <th class="th-class"> <span id="today-date" class="data-size"></span></th>
+
+            </tr>
+        </table>
+    </div>
+    <div id="date-div">
+        <h1><i><u>Digital Clock:</u></i></h1>
+        <table border="5" cellspacing="20px" cellpadding="2px" align="center">
+            <tr>
+                <th class="th-class"><span class="data-size">TIME</span></th>
+                <th class="th-class"><span id="curr-time" class="data-size"></span></th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        //var now = new Date();
+        setInterval(test, 1000);
+        function test() {
+            var now = new Date();
+            document.getElementById("today-date").innerHTML = now.toDateString();
+            document.getElementById("curr-time").innerHTML = now.toLocaleTimeString();
+        }
+         /*   if (now.getHours < 12 && now.getMinutes < 60)
+              document.getElementById("curr-time").innerHTML = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}AM`
+
+          else {
+
+              document.getElementById("curr-time").innerHTML = `${now.getHours() - 12}:${now.getMinutes()}:${now.getSeconds()}PM`
+          }
+      }*/
+
+    </script>
+</body>
+
+</html>
